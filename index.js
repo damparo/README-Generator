@@ -1,12 +1,25 @@
-const questions = [ 
+const inquirer = require("inquirer");
 
-];
 
-function writeToFile(fileName, data) {
-}
+console.log(apiGit);
 
-function init() {
 
-}
+inquirer
+  .prompt({
+    message: "Enter your GitHub username",
+    name: "username"
+  })
 
-init();
+
+// const questions = [ 
+
+// ];
+
+// function writeToFile(fileName, data) {
+// }
+
+// function init() {
+
+// }
+
+// init();

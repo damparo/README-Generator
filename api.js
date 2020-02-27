@@ -1,11 +1,25 @@
-const api = {
-    getUser(username) {
-  
-    }
-  };
-  
-  module.exports = api;
+const axios = require("axios");
+const inquirer = require("inquirer");
 
-//   ${username}?client_id=${
-//     process.env.CLIENT_ID
-//     }&client_secret=${process.env.CLIENT_SECRET}`
+inquirer
+  .prompt({
+    message: "Enter your GitHub username",
+    name: "username"
+
+
+    
+  })
+.then(function({username}){
+      const queryUrl = `https://api.github.com/users/${username}`;
+ 
+      return axios.get(queryUrl);
+    
+    })
+    .then(function({data: repos}){
+      console.log(repos);
+    });
+   
+
+  
+
+
